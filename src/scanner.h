@@ -58,7 +58,7 @@ namespace YAML
 		
 		bool InFlowContext() const { return !m_flows.empty(); }
 		bool InBlockContext() const { return m_flows.empty(); }
-		int GetFlowLevel() const { return m_flows.size(); }
+		int GetFlowLevel() const { return static_cast<int>(m_flows.size()); }
 		
 		Token::TYPE GetStartTokenFor(IndentMarker::INDENT_TYPE type) const;
 		IndentMarker *PushIndentTo(int column, IndentMarker::INDENT_TYPE type);

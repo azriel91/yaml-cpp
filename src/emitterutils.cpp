@@ -334,7 +334,7 @@ namespace YAML
 
 		bool WriteComment(ostream_wrapper& out, const std::string& str, int postCommentIndent)
 		{
-			const unsigned curIndent = out.col();
+			const unsigned curIndent = static_cast<unsigned>(out.col());
 			out << "#" << Indentation(postCommentIndent);
             out.set_comment();
 			int codePoint;
